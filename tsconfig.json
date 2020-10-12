@@ -7,7 +7,7 @@
     "target": "es6",
     "lib": ["dom", "esnext"],
     "skipLibCheck": true,
-    "types": ["reflect-metadata", "bytebuffer"],
+    "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "./dist",
@@ -18,5 +18,5 @@
     }
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "__test__/**/*"]
 }
