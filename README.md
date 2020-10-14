@@ -23,3 +23,18 @@ Prerequisites: install node, npm, yarn go 1.15 \
 command:  \
 go run ./dns_test_service/service/main.go \
 yarn start 
+
+# Microservice endpoints
+
+localhost:3001/api/v1 - healthcheck \
+localhost:3001/api/v1/dns - POST \
+expected body: 
+```
+ { 
+    "domainName": "google.com",
+	"cname": "google.com",
+	"cnameTarget": "194.153.145.104",
+	"ttl": 300
+}
+```
+Headers: { Content-Type: application/json }
