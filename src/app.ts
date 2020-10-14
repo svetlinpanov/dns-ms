@@ -6,7 +6,7 @@ import { DnsRouter, MainRouter } from "./routers";
 @injectable()
 export class App {
   private app: Koa;
-  PORT = process.env.PORT || 3000;
+  PORT = process.env.PORT || 3001;
 
   constructor(private mainRouter: MainRouter, private dnsRouter: DnsRouter) {
     this.app = new Koa();
