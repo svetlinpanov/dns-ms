@@ -1,0 +1,25 @@
+version: "3"
+
+networks:
+  dns-network:
+    driver: bridge
+services:
+  api:
+    container_name: node-api
+    build: .
+    env_file:
+      - .env.prod
+    ports:
+      - "3001:3001"
+    networks:
+      - dns-network
+    depends_on:
+      - dns-test-service
+
+  dns-test-service:
+    container_name: go-api
+    build:
+      context: ./dns_test_service
+    restart: on-failure
+    networks:
+      - dns-network
